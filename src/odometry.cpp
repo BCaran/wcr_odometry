@@ -21,7 +21,7 @@ class OdometryPublisher : public rclcpp::Node
             10,                   
             std::bind(&OdometryPublisher::joint_state_callback, this, std::placeholders::_1)
       );
-      publisher_odom_ = this->create_publisher<nav_msgs::msg::Odometry>("odom", 10);
+      publisher_odom_ = this->create_publisher<nav_msgs::msg::Odometry>("wcr/odom", 10);
       tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
       odometry_reset_ = this->create_service<std_srvs::srv::Trigger>("reset_odometry", std::bind(&OdometryPublisher::odom_reset, this, std::placeholders::_1, std::placeholders::_2));
 
