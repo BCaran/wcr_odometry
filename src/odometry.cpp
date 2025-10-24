@@ -17,7 +17,7 @@ class OdometryPublisher : public rclcpp::Node
     : Node("minimal_subscriber")
     {
       subscription_joint_states_ = this->create_subscription<sensor_msgs::msg::JointState>(
-            "/joint_states",      
+            "wcr/joint_states",      
             10,                   
             std::bind(&OdometryPublisher::joint_state_callback, this, std::placeholders::_1)
       );
