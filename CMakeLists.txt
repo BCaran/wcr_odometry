@@ -19,10 +19,10 @@ find_package(nav_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(std_srvs REQUIRED)
-find_package(wcr_interface REQUIRED)
+#find_package(wcr_interface REQUIRED)
 
 add_executable(odometry src/odometry.cpp)
-ament_target_dependencies(odometry rclcpp std_msgs geometry_msgs sensor_msgs nav_msgs tf2 tf2_ros std_srvs wcr_interface)
+ament_target_dependencies(odometry rclcpp std_msgs geometry_msgs sensor_msgs nav_msgs tf2 tf2_ros std_srvs)
 
 install(TARGETS
   odometry
